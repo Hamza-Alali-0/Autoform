@@ -1,0 +1,74 @@
+{% extends 'navbar.html' %}
+
+{% block title %}Formations{% endblock %}
+
+{% block content %}
+{% load static %}
+
+{% block additional_stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/stylevideoform.css' %}">
+{% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Video</title>
+</head>
+<body>
+
+<div id="video-container">
+    <!-- This div will contain the embedded YouTube video -->
+</div>
+
+<br><br><br><br><br><br><br>
+
+<footer>
+    <div class="footer-content">
+        <div class="logo-and-text">
+            <div class="logo">
+                <h2><img src="{% static 'images/logo.png' %}" alt="Logo"></h2>
+            </div>
+            <p>&copy; 2024 ACAPS. Tous droits réservés.</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{% url 'acceuil' %}">Accueil</a></li>
+            <li><a href="{% url 'formations' %}">Formations</a></li>
+           
+        </ul>
+        <ul class="social-media">
+            <li><a href="https://www.linkedin.com/company/acaps-officiel/"><img height="30" width="40" src="{% static 'images/assets/lkdin.png' %}" alt="linkedin"></a></li>
+            <li><a href="https://x.com/ACAPS_officiel"><img height="30" width="30" src="{% static 'images/assets/twitter.png' %}" alt="Twitter"></a></li>
+            <li><a href="https://www.instagram.com/acaps_et_vous/"><img  height="30" width="30" src="{% static 'images/assets/insta.png' %}" alt="Instagram"></a></li>
+        </ul>
+    </div>
+</footer>
+
+<script>
+    // JavaScript to load the appropriate YouTube video based on the parameter in the URL
+    document.addEventListener("DOMContentLoaded", function() {
+        // Parse the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoId = urlParams.get('video');
+
+        // Function to load the YouTube video based on videoId
+        function loadVideo(videoId) {
+            // Replace the content of the video container with the appropriate YouTube embed code
+            document.getElementById('video-container').innerHTML = `
+                <iframe  width="1200" height="650" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+            `;
+        }
+
+        // Load the video based on the 'video' parameter in the URL
+        if (videoId) {
+            loadVideo(videoId);
+        } else {
+            // Default behavior if no video parameter is provided
+            loadVideo('DEFAULT_VIDEO_ID');
+        }
+    });
+</script>
+{% endblock %}
+</body>
+</html>

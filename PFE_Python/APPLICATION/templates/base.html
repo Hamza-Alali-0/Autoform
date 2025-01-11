@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACAPS</title>
+    
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="logo-container"> 
+        <img src="{% static 'images/logo.png' %}" alt="logo" class="logo"> 
+    </div>
+
+    <!-- Video background container -->
+    <div class="video-background">
+        <video id="bgvid" autoplay loop muted playsinline>
+            <source src="{% static 'images/vid.mp4' %}" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Text content overlay -->
+    <div class="content-overlay">
+        <div class="middle">
+            <h1></h1>
+            <p>Nous offrons une vaste gamme de formations en ligne et de vidéos éducatives pour vous aider à améliorer vos compétences et vos connaissances. Parcourez notre catalogue et trouvez les ressources qui vous conviennent le mieux.</p>
+            <p>Rejoignez-nous chez ACAPS</p>
+            <hr>
+            <br>
+            <button class="button" onclick="location.href='{% url 'connexion' %}'">Connexion</button>
+            <button class="button" onclick="location.href='{% url 'inscription' %}'">Inscription</button>
+        </div>
+    </div>
+
+    <script>
+        // Get the video element
+        var video = document.getElementById('bgvid');
+        
+        // Set the playback rate
+        video.playbackRate = 1; // Change this value to adjust the speed (2 is double speed)
+    </script>
+</body>
+</html>

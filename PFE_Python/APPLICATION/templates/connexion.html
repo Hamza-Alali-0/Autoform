@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylecnx.css' %}">
+</head>
+<body>
+    <section class="container">
+        <div class="picture-container">
+            <img src="{% static 'images/bg.png' %}" alt="Picture">
+        </div>
+        <div class="form-container">
+            <div class="form">
+                <div class="logo">
+                    <h2><img height="80px" src="{% static 'images/logo.png' %}" alt=""></h2>
+                  </div>
+                  
+                
+                <form method="post" action="{% url 'connexion' %}">
+                    {% csrf_token %}
+                    <br><br><br><br><br><br>
+                    <h1>Connexion</h1>
+                      {% if messages %}
+                      <div  class="error-messages">
+                          {% for message in messages %}
+                          <p  style="text-align: center;" class="error">{{ message }}</p>
+                          {% endfor %}
+                      </div>
+                      {% endif %}
+                    
+                    <div class="input-box">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" required>
+                    </div>
+                    <br>
+                    <div class="input-box">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" name="password" required>
+                    </div>
+                    <br>
+                    <button type="submit">Se connecter</button>
+                </form>
+                <p class="link">Pas encore inscrit ? <a href="{% url 'inscription' %}">S'inscrire</a></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

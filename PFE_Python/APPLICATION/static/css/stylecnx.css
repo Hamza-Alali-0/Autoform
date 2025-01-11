@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+.logo h2 {
+text-decoration: overline;
+font-style: italic;
+color: #0CA3E4;
+cursor: pointer;
+margin: 0 0.5rem;
+margin-top: 35px;
+margin-left: 10px;
+text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.picture-container {
+    width: 32%;
+    margin-right: 0px; /* Adjust spacing between the picture and form */
+}
+
+.picture-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    height: 800px;
+}
+
+.form-container {
+    width: 30%; /* Adjust the width of the form container as needed */
+    height: 800px;
+}
+
+.form {
+    padding: 40px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 850px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+h4 {
+    margin-bottom: 5px;
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.link a {
+    color: #007bff;
+}
+
+.link a:hover {
+    color: #0056b3;
+}

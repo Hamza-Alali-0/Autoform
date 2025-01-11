@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styleacceuil.css' %}">
+    {% block additional_stylesheets %}{% endblock %}
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h2><img src="{% static 'images/logo.png' %}" alt="Logo"></h2>
+        </div>
+        <div class="nav-items">
+            <ul class="overview">
+                <li><a href="{% url 'acceuil' %}">Accueil</a></li>
+                <li><a href="{% url 'formations' %}">Formations</a></li>
+            </ul>
+            <ul class="account">
+                <li><a href="#"></a></li>
+                <ul class="account1">
+                    <li><button><a href="{% url 'deconnexion' %}">Déconnexion</a></button></li>
+                </ul>
+            </ul>
+        </div>
+    </nav>
+    
+    {% block content %}
+    
+    {% endblock %}
+    {% block additional_scripts %}{% endblock %}
+</body>
+</html>

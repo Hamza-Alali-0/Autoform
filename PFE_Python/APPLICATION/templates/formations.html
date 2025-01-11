@@ -1,0 +1,172 @@
+
+{% extends 'navbar.html' %}
+
+{% block title %}Formations{% endblock %}
+
+{% block content %}{% load static %}
+    
+
+    {% block additional_stylesheets %}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styleformations.css' %}">
+{% endblock %}
+
+    <div class="picture-section" style="background-image: url('{% static 'images/banniere.png' %}');">
+        <div class="picture-section-text">
+            
+            <p>Accueil > Formations </p>
+            <br>
+            <h1><strong>FORMATIONS </strong></h1>
+            <br>
+           
+            <br>
+           
+        </div>
+    </div>
+
+    <div class="new-section">
+        <h2>Nos Formations.</h2>
+        <p>Avec ACAPS, découvrez une nouvelle façon d'apprendre : 20% de théorie, 80% de pratique.</p>
+        <br><br><br>
+    </div>
+    <div class="picture-container">
+        <div class="picture">
+            <a href="{% url 'formvideo' %}?video=rfscVS0vtbw" >
+                <img src="{% static 'images/assets/python.png' %}" alt="Python">
+                <div class="image-text">Python</div>
+            </a>
+        </div>
+        <div class="picture">
+            <a href="{% url 'formvideo' %}?video=PkZNo7MFNFg">
+                <img src="{% static 'images/assets/javascript.png' %}" alt="JavaScript">
+                <div class="image-text">JavaScript</div>
+            </a>
+        </div>
+        <div class="picture">
+            <a href="{% url 'formvideo' %}?video=GoXwIVyNvX0">
+                <img src="{% static 'images/assets/java.png' %}" alt="Java">
+                <div class="image-text">Java</div>
+            </a>
+        </div>
+        <div class="picture">
+            <a href="{% url 'formvideo' %}?video=vLnPwxZdW4Y">
+                <img src="{% static 'images/assets/c++.png' %}" alt="C++">
+                <div class="image-text">C++</div>
+            </a>
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="picture-container">
+        <div class="picture">
+            <a href="{% url 'formvideo' %}?video=GhQdlIFylQ8">
+                <img src="{% static 'images/assets/c#.png' %}" alt="c#">
+                <div class="image-text">C#</div>
+            </a>
+        </div>
+        <div class="picture">
+            <a href="{% url 'formvideo' %}?video=OK_JCtrrv-c">
+                <img src="{% static 'images/assets/php.png' %}" alt="php">
+                <div class="image-text">Php</div>
+            </a>
+        </div>
+        <div class="picture">
+            <a href="{% url 'formvideo' %}?video=SqcY0GlETPk">
+                <img src="{% static 'images/assets/react.png' %}" alt="react">
+                <div class="image-text">React</div>
+            </a>
+        </div>
+        <div class="picture">
+            <a href="{% url 'formvideo' %}?video=EExSSotojVI">
+                <img src="{% static 'images/assets/kotlin.png' %}" alt="kotlin">
+                <div class="image-text">Kotlin</div>
+            </a>
+        </div>
+    </div>
+    
+
+    <br><br><br><br><br><br>
+    <div class="picture-section1" style="background-color: #E7E3FD;">
+        <div class="picture-container">
+            <div class="picture-section-text1">
+                <br><br>
+                <p>Prenez une pause bien méritée : plongez dans notre oasis de détente, <br>rechargez vos batteries et repartez revitalisé pour votre apprentissage </p>
+                <br>
+                <div class="button">
+                    <a href="{% url 'jeux' %}">Jouer au PENDU</a>
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class="picture1">
+                <img id="changing-image" src="{% static 'images/assets/hangman.jpg' %}" alt="Changing Image">
+            </div>
+        </div>
+    </div>
+    
+<br><br><br><br>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo-and-text">
+                <div class="logo">
+                    <h2><img src="{% static 'images/logo.png' %}" alt="Logo"></h2>
+                </div>
+                <p>&copy; 2024 ACAPS. Tous droits réservés.</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'acceuil' %}">Accueil</a></li>
+                <li><a href="{% url 'formations' %}">Formations</a></li>
+                
+            </ul>
+            <ul class="social-media">
+                <li><a href="https://www.linkedin.com/company/acaps-officiel/"><img height="30" width="40" src="{% static 'images/assets/lkdin.png' %}" alt="linkedin"></a></li>
+                <li><a href="https://x.com/ACAPS_officiel"><img height="30" width="30" src="{% static 'images/assets/twitter.png' %}" alt="Twitter"></a></li>
+                <li><a href="https://www.instagram.com/acaps_et_vous/"><img  height="30" width="30" src="{% static 'images/assets/insta.png' %}" alt="Instagram"></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        var images = ["{% static 'images/assets/hangman.jpg' %}", "{% static 'images/assets/hangman2.jpg' %}"]; 
+        var currentIndex = 0;
+        var interval = 3000; // 5 seconds
+    
+        function changeImage() {
+            var img = document.getElementById('changing-image');
+            img.style.opacity = 3; // Fade out the current image
+            setTimeout(function() {
+                currentIndex = (currentIndex + 1) % images.length;
+                img.src = images[currentIndex];
+                img.style.opacity = 1; // Fade in the new image
+            }, 500); // Change image after 0.5s
+        }
+    
+        setInterval(changeImage, interval);
+    </script>
+    <script>
+        // JavaScript to load the appropriate YouTube video based on the parameter in the URL
+        document.addEventListener("DOMContentLoaded", function() {
+            // Parse the URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const videoId = urlParams.get('video');
+    
+            // Function to load the YouTube video based on videoId
+            function loadVideo(videoId) {
+                // Replace the content of the video container with the appropriate YouTube embed code
+                document.getElementById('video-container').innerHTML = `
+                    <iframe  width="800" height="450" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+                `;
+            }
+    
+            // Load the video based on the 'video' parameter in the URL
+            if (videoId) {
+                loadVideo(videoId);
+            } else {
+                // Default behavior if no video parameter is provided
+                loadVideo('DEFAULT_VIDEO_ID');
+            }
+        });
+    </script>
+      {% endblock %}
+    </body>
+    </html>

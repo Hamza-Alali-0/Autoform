@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styleinsc.css' %}">
+   
+</head>
+<body>
+    <section class="container">
+        <div class="picture-container">
+            <img src="{% static 'images/identif.jpg' %}" alt="Picture">
+        </div>
+        <div class="form-container">
+            <div class="form">
+                <div class="logo">
+                    <h2><img height="80px" src="{% static 'images/logo.png' %}" alt=""></h2>
+                  </div>
+                <form method="post" action="{% url 'inscription' %}"> <br><br><br>
+                    {% csrf_token %}
+                    <h1>Inscription</h1>
+                   
+                    {{ form.as_p }}    
+                    <button type="submit">S'inscrire</button>
+                </form>
+                <p class="link">Déjà inscrit ? <a href="{% url 'connexion' %}">Se connecter</a></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8" />
+        <link rel="stylesheet" href="{% static 'css/stylejeux.css' %}" />
+        <title>Hangman</title>
+    </head>
+    <body>
+        <div id="score">
+            
+        </div>
+        <div id="wrapper">
+            <div id="answer">
+                <ul></ul>
+            </div>
+            <div id="choices">
+                <ul>
+                </ul>
+            </div>
+        </div>
+    
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'js/initFunctions.js' %}"></script>
+        <script src="{% static 'js/words.js' %}"></script>
+    </body>
+</html>

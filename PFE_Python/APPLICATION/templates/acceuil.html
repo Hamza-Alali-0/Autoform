@@ -1,0 +1,150 @@
+
+{% extends 'navbar.html' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}{% load static %}
+
+
+    <div class="picture-section" style="background-image: url('{% static 'images/banniere.png' %}');">
+        <div class="picture-section-text">
+            <h1><strong>APPRENEZ </strong></h1>
+            <h1> <strong>SANS LIMITES</strong> </h1>
+            <br>
+            <p> Sur notre plateforme digitale pour l’éducation financière des jeunes <br>
+                pour le compte de l’Autorité de Contrôle des Assurances et de la <br>
+                Prévoyance Sociale</p>
+            <br>
+            <div class="button">
+                <a href="{% url 'formations' %}">rejoindre  </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="new-section">
+        <h2>Savoir-faire.</h2>
+        <p>Avec ACAPS, découvrez une nouvelle façon d'apprendre : 20% de théorie, 80% de pratique.</p>
+        <br><br><br>
+        <div class="circle-images">
+            <div class="circle-container">
+                <div class="circle">
+                    <img src="{% static 'images/imag1.png' %}" alt="Image 1">
+                </div>
+                <br>
+                <p class="circle-text">Apprenez où que vous soyez</p>
+            </div>
+            <div class="circle-container">
+                <div class="circle">
+                    <img src="{% static 'images/image2.png' %}" alt="Image 2">
+                </div>
+                <br>
+                <p class="circle-text">Un mentor pour vous accompagne</p>
+            </div>
+            <div class="circle-container">
+                <div class="circle">
+                    <img src="{% static 'images/image3.png' %}" alt="Image 3">
+                </div>
+                <br>
+                <p class="circle-text">Apprenez des compétences d'aujourd'hui</p>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="grey-section">
+        <br><br>
+        <h2>Une large sélection de cours</h2>
+        <br>
+        <p>Choisissez parmi plus de  100  cours en ligne. <br>
+            De nouveaux cours sont ajoutés tous les mois.</p>
+        <br><br><br>
+        <br>
+        <div class="mediatheque">
+          <div class="arrow left-arrow" onclick="moveLeft()">&#9664;</div>
+          <div class="mediatheque-items-container">
+              <div class="mediatheque-item">
+                  <img src="{% static 'images/assets/pic1.png' %}" alt="Square Image 1">
+                  <div class="overlay-text">Python : Un langage puissant et polyvalent</div>
+              </div>
+              <div class="mediatheque-item">
+                  <img src="{% static 'images/assets/pic2.png' %}" alt="Square Image 2">
+                  <div class="overlay-text">
+                    JavaScript : Un langage puissant et omniprésent </div>
+              </div>
+              <div class="mediatheque-item">
+                  <img src="{% static 'images/assets/pic3.png' %}" alt="Square Image 3">
+                  <div class="overlay-text">Java : Puissance et portabilité pour toutes vos applications</div>
+              </div>
+              <div class="mediatheque-item">
+                  <img src="{% static 'images/assets/pic4.png' %}" alt="Square Image 4">
+                  <div class="overlay-text">C++ : Performance et contrôle sans compromis</div>
+              </div>
+              <div class="mediatheque-item">
+                  <img src="{% static 'images/assets/pic5.png' %}" alt="Square Image 5">
+                  <div class="overlay-text">C# : Élégance et efficacité pour le développement moderne</div>
+              </div>
+              <div class="mediatheque-item">
+                  <img height="144" width="290" src="{% static 'images/assets/pic6.png' %}" alt="Square Image 6">
+                  <div class="overlay-text">PHP : La flexibilité au service du web</div>
+              </div>
+              <div class="mediatheque-item">
+                  <img height="144" width="290" src="{% static 'images/assets/pic7.png' %}" alt="Square Image 7">
+                  <div class="overlay-text">React : Dynamisez vos interfaces utilisateur</div>
+              </div>
+          </div>
+          <div class="arrow right-arrow" onclick="moveRight()">&#9654;</div>
+      </div>
+      
+        <br><br><br>
+        <br>
+        <div class="button-container">
+            <div class="button1">
+                <br>
+                <a href="{% url 'formations' %}">Découvrez</a>
+            </div>
+        </div>
+        <br><br>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="logo-and-text">
+                <div class="logo">
+                    <h2><img src="{% static 'images/logo.png' %}" alt="Logo"></h2>
+                </div>
+                <p>&copy; 2024 ACAPS. Tous droits réservés.</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'acceuil' %}">Accueil</a></li>
+                <li><a href="{% url 'formations' %}">Formations</a></li>
+                
+            </ul>
+            <ul class="social-media">
+                <li><a href="https://www.linkedin.com/company/acaps-officiel/"><img height="30" width="40" src="{% static 'images/assets/lkdin.png' %}" alt="linkedin"></a></li>
+                <li><a href="https://x.com/ACAPS_officiel"><img height="30" width="30" src="{% static 'images/assets/twitter.png' %}" alt="Twitter"></a></li>
+                <li><a href="https://www.instagram.com/acaps_et_vous/"><img  height="30" width="30" src="{% static 'images/assets/insta.png' %}" alt="Instagram"></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const maxIndex = 3;
+
+        function moveLeft() {
+            const container = document.querySelector('.mediatheque-items-container');
+            if (currentIndex > 0) {
+                currentIndex--;
+                container.style.transform = `translateX(-${currentIndex * 250}px)`;
+            }
+        }
+
+        function moveRight() {
+            const container = document.querySelector('.mediatheque-items-container');
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                container.style.transform = `translateX(-${currentIndex * 250}px)`;
+            }
+        }
+    </script>
+    {% endblock %}
+</body>
+</html>
