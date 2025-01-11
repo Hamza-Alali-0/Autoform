@@ -82,7 +82,7 @@ Here are some screenshots of the project:
 
 | ![Login Page][login-screenshot] | ![Home Page][home-screenshot] | ![Courses Page][courses-screenshot] |
 |---------------------------------|-------------------------------|--------------------------------------|
-| **Login Page**                  | **Home Page**                 | **Courses Page**                     |
+| **SignUp Page**                  | **Login Page**                 | **Courses Page**                     |
 
 <!-- Reference-style links for images -->
 [login-screenshot]: Assets/connexion.png
