@@ -37,7 +37,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<a href="https://github.com/yourusername/AutoForm">
+<a href="https://github.com/Hamza-Alali-0/AutoForm">
     <img src="Assets/home.png" alt="Home Page" width="600">
 </a>
 
@@ -107,7 +107,7 @@ Before you begin, ensure you have the following installed:
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/yourusername/AutoForm.git
+   git clone https://github.com/Hamza-Alali-0/AutoForm.git
    
 2. **Import Database**:
    
